@@ -1,0 +1,54 @@
+Name:             nginx-pod
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             node01/172.30.2.2
+Start Time:       Tue, 24 Jan 2023 07:59:23 +0000
+Labels:           app=nginx
+                  env=non-prod
+Annotations:      cni.projectcalico.org/containerID: 4e2e155abaa8918227f83714591d92ec12862f241ae9b0561e20381b87c24b61
+                  cni.projectcalico.org/podIP: 192.168.1.3/32
+                  cni.projectcalico.org/podIPs: 192.168.1.3/32
+Status:           Running
+IP:               192.168.1.3
+IPs:
+  IP:  192.168.1.3
+Containers:
+  nginx-pod:
+    Container ID:   containerd://44afcd96ac6220ff99e473a939425d50fbc9109410976492af1963f4cd1efa71
+    Image:          nginx:alpine
+    Image ID:       docker.io/library/nginx@sha256:659610aadb34b7967dea7686926fdcf08d588a71c5121edb094ce0e4cdbc45e6
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 24 Jan 2023 07:59:26 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-294j4 (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-294j4:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  76s   default-scheduler  Successfully assigned default/nginx-pod to node01
+  Normal  Pulling    76s   kubelet            Pulling image "nginx:alpine"
+  Normal  Pulled     73s   kubelet            Successfully pulled image "nginx:alpine" in 2.758562994s (2.758567085s including waiting)
+  Normal  Created    73s   kubelet            Created container nginx-pod
+  Normal  Started    73s   kubelet            Started container nginx-pod

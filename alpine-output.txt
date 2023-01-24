@@ -1,0 +1,56 @@
+Name:             alpine-pod
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             node01/172.30.2.2
+Start Time:       Tue, 24 Jan 2023 08:17:04 +0000
+Labels:           app=alpine-pod
+Annotations:      cni.projectcalico.org/containerID: 693f37a95c2462d7f8fe6afb36a1f1f1aa1790c1e7c08117d23f1eb4e4583ea0
+                  cni.projectcalico.org/podIP: 
+                  cni.projectcalico.org/podIPs: 
+Status:           Succeeded
+IP:               192.168.1.6
+IPs:
+  IP:  192.168.1.6
+Containers:
+  alpine-container:
+    Container ID:   containerd://4d251522fec07e8942463b9a95577aa77d4d5e8200f9698d84c919d1fbc4c07b
+    Image:          alpine:edge
+    Image ID:       docker.io/library/alpine@sha256:c223f84e05c23c0571ce8decefef818864869187e1a3ea47719412e205c8c64e
+    Port:           <none>
+    Host Port:      <none>
+    State:          Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Tue, 24 Jan 2023 08:17:07 +0000
+      Finished:     Tue, 24 Jan 2023 08:17:07 +0000
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-bchtb (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-bchtb:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  60s   default-scheduler  Successfully assigned default/alpine-pod to node01
+  Normal  Pulling    59s   kubelet            Pulling image "alpine:edge"
+  Normal  Pulled     57s   kubelet            Successfully pulled image "alpine:edge" in 1.883037183s (1.883045862s including waiting)
+  Normal  Created    57s   kubelet            Created container alpine-container
+  Normal  Started    57s   kubelet            Started container alpine-container
