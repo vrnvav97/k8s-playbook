@@ -1,6 +1,6 @@
 # k8s-playbook
 
-More Desciption on Canary Deployment can be found at <link_to_be_added>
+More Desciption on Canary Deployment can be found at https://medium.com/@vrnvav97/canary-deployment-in-kubernetes-a18c81cb9b
 
 # Getting Started
 
